@@ -3,6 +3,11 @@
 <html>
     <head>
         <title>qiushye的博客</title>
+        <script>
+            var contentWidth;
+            var menuWidth = 200;
+            contentWidth = document.body.clientWidth;
+        </script>
         <style>
             #header{
                 background-color: rgb(5, 58, 105);
@@ -20,14 +25,23 @@
                 padding: 5px;
             }
 
-            #content{
+            #article_list{
                 line-height: 30px;
                 background-color: rgba(137, 141, 153, 0.438);
                 color: blue;
                 height: 600px;
-                width: 1000px;
+                width: 1100px;
                 float: left;
                 padding: 10px;
+            }
+
+            #article_item{
+                line-height: 30px;
+                background-color: rgba(137, 141, 153, 0.438);
+                color: blue;
+                height: 60px;
+                width: 1100px;
+                float: left;
             }
 
             #footer{
@@ -35,7 +49,7 @@
                 background-color:white;
                 color: black;
                 height: 100px;
-                width: 1000px;
+                width: 100%;
                 padding: 10px;
                 clear: both;
                 text-align: center;
@@ -46,6 +60,10 @@
     <body>
         <div id="header">
             <h1>我的博客网页</h1>
+            <p id="wd"></p>
+            <script>
+                document.getElementById("wd").innerHTML = "网页可见区域宽度" + document.body.clientWidth; 
+            </script>
         </div>
 
         <div id="menu">
@@ -54,8 +72,33 @@
             博客3<br />
         </div>
 
-        <div id="content">
+        <div id="article_list">
             Here are the contents of blogs.
+            <p id="content_wd"></p>
+            <script>
+                document.getElementById("content").clientWidth = document.body.clientWidth - document.getElementById("menu").offsetWidth;
+            </script>
+            <div class="article_item">
+                
+                <h4 class="">
+                    <a href="https://blog.csdn.net/qiushye/article/details/104743133" target="_blank">
+                    <span><strong>原创</strong></span>&nbsp; 文本处理grep命令</a>
+                    <p>
+                        <a href="https://blog.csdn.net/qiushye/article/details/104743133" target="_blank">
+                        <ul>
+                            <li>grep text file</li> 
+                            <li>grep -R text dir</li>
+                        </ul>
+                       </a>
+                    </p>
+
+                </h4>
+            </div>
+            <div class="article_item">
+                <h4 class="">
+                    用户管理命令
+                </h4>
+            </div>
         </div>
         
         <div id="footer">
